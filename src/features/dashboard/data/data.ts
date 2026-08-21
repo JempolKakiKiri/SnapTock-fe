@@ -1,4 +1,4 @@
-import {CalendarDays, ShoppingBasket, Warehouse} from "lucide-react";
+import { CalendarDays, ShoppingBasket, Warehouse } from "lucide-react";
 
 export const summaryData = [
   {
@@ -24,5 +24,5 @@ export const summaryData = [
     title: "Days",
     amount: 3,
     desc: "Soonest Runout",
-  }
-]
+  },
+];
