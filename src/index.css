@@ -1,52 +1,106 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
 
 :root {
-    font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 @theme {
-    --color-green-100: #BEFFDC;
-    --color-green-200: #85F8C4;
-    --color-green-300: #68DBA9;
-    --color-green-400: #49BF8F;
-    --color-green-500: #25A475;
-    --color-green-600: #00885F;
-    --color-green-700: #006C4A;
-    --color-green-800: #005137;
-    --color-green-900: #005137;
-    --color-green-1000: #002114;
+  --color-green-100: #beffdc;
+  --color-green-200: #85f8c4;
+  --color-green-300: #68dba9;
+  --color-green-400: #49bf8f;
+  --color-green-500: #25a475;
+  --color-green-600: #00885f;
+  --color-green-700: #006c4a;
+  --color-green-800: #005137;
+  --color-green-900: #003825;
+  --color-green-1000: #002114;
 
-    --color-gray-100: #EDF0FF;
-    --color-gray-200: #DCE2F7;
-    --color-gray-300: #C0C6DB;
-    --color-gray-400: #A4ABBF;
-    --color-gray-500: #8A90A4;
-    --color-gray-600: #707789;
-    --color-gray-700: #575E70;
-    --color-gray-800: #293040;
-    --color-gray-900: #404758;
-    --color-gray-1000: #141B2B;
+  --color-gray-100: #edf0ff;
+  --color-gray-200: #dce2f7;
+  --color-gray-300: #c0c6db;
+  --color-gray-400: #a4abbf;
+  --color-gray-500: #8a90a4;
+  --color-gray-600: #707789;
+  --color-gray-700: #575e70;
+  --color-gray-800: #404758;
+  --color-gray-900: #293040;
+  --color-gray-1000: #141b2b;
 
-    --color-orange-100: #FFEEDE;
-    --color-orange-200: #FFDDB8;
-    --color-orange-300: #FFB95F;
-    --color-orange-400: #EE9800;
-    --color-orange-500: #CA8100;
-    --color-orange-600: #A76A00;
-    --color-orange-700: #855300;
-    --color-orange-800: #653E00;
-    --color-orange-900: #472A00;
-    --color-orange-1000: #2A1700;
+  --color-orange-100: #ffeede;
+  --color-orange-200: #ffddb8;
+  --color-orange-300: #ffb95f;
+  --color-orange-400: #ee9800;
+  --color-orange-500: #ca8100;
+  --color-orange-600: #a76a00;
+  --color-orange-700: #855300;
+  --color-orange-800: #653e00;
+  --color-orange-900: #472a00;
+  --color-orange-1000: #2a1700;
 
-    --color-neutral-100: #EBF1FF;
-    --color-neutral-200: #DCE2F3;
-    --color-neutral-300: #C0C7D6;
-    --color-neutral-400: #A4ABBB;
-    --color-neutral-500: #8A91A0;
-    --color-neutral-600: #707785;
-    --color-neutral-700: #585F6C;
-    --color-neutral-800: #404754;
-    --color-neutral-900: #2A313D;
-    --color-neutral-1000: #151C27;
+  --color-neutral-100: #ebf1ff;
+  --color-neutral-200: #dce2f3;
+  --color-neutral-300: #c0c7d6;
+  --color-neutral-400: #a4abbb;
+  --color-neutral-500: #8a91a0;
+  --color-neutral-600: #707785;
+  --color-neutral-700: #585f6c;
+  --color-neutral-800: #404754;
+  --color-neutral-900: #2a313d;
+  --color-neutral-1000: #151c27;
+}
+
+@utility font-inter-100 {
+  font-family: "Inter", sans-serif;
+  font-weight: 100;
+}
+
+@utility font-inter-200 {
+  font-family: "Inter", sans-serif;
+  font-weight: 200;
+}
+
+@utility font-inter-300 {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+}
+
+@utility font-inter-400 {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+@utility font-inter-500 {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+
+@utility font-inter-600 {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+@utility font-inter-700 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+}
+
+@utility font-inter-800 {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+}
+
+@utility font-inter-900 {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+}
+
+@layer base {
+  body {
+    @apply bg-neutral-100;
+  }
+  html {
+    @apply font-inter-400 scroll-smooth;
+  }
 }
