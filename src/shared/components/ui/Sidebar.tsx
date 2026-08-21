@@ -16,7 +16,7 @@ const Nav = [
 
 const Sidebar = () => {
   return (
-    <aside className="flex h-screen lg:w-65 shrink-0 flex-col bg-green-700 text-white border-r-2 border-r-black">
+    <aside className="flex lg:w-65 shrink-0 flex-col bg-green-700 text-white border-r-2 border-r-black">
       <div className="flex items-center gap-2 px-5 py-5">
         <img
           src="/SnapTock-logo.webp"
