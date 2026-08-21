@@ -16,7 +16,7 @@ const DashboardSummary = () => {
     <div className="w-full grid grid-cols-1 gap-6 p-6 md:grid-cols-2 lg:grid-cols-3">
       {summaryData.map(
         ({ id, Icon, className, title, amount, desc }: SummaryProps) => (
-          <Card key={id} className="flex flex-col gap-6">
+          <Card key={id} className="flex flex-col gap-6 hover:-translate-y-2 transition-transform duration-200">
             <div className={`${className} flex items-center gap-4`}>
               <Icon width={36} height={36} />
               <h1 className="font-inter-600 text-[28px]">{title}</h1>
