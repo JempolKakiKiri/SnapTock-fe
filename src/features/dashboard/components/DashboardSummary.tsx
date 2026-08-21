@@ -13,7 +13,7 @@ interface SummaryProps {
 
 const DashboardSummary = () => {
   return (
-    <div className="w-full grid grid-cols-1 gap-6 p-6 md:grid-cols-2 lg:grid-cols-3">
+    <section className="w-full grid grid-cols-1 gap-6 p-6 md:grid-cols-2 lg:grid-cols-3">
       {summaryData.map(
         ({ id, Icon, className, title, amount, desc }: SummaryProps) => (
           <Card
@@ -31,7 +31,7 @@ const DashboardSummary = () => {
           </Card>
         ),
       )}
-    </div>
+    </section>
   );
 };
 
