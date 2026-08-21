@@ -1,9 +1,5 @@
 const DashboardSection = () => {
-  return (
-    <div>
-
-    </div>
-  );
+  return <div></div>;
 };
 
 export default DashboardSection;

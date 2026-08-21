@@ -1,7 +1,7 @@
 import DashboardContainer from "../../features/dashboard/container/DashboardContainer.tsx";
 
 const DashboardPage = () => {
-  return <DashboardContainer />
+  return <DashboardContainer />;
 };
 
 export default DashboardPage;
