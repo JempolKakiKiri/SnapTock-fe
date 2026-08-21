@@ -1,30 +1,36 @@
 import { NavLink } from "react-router-dom";
-import {LayoutDashboard, ScanBox} from "lucide-react";
+import { LayoutDashboard, ScanBox } from "lucide-react";
 
 const Nav = [
   {
     label: "Dashboard",
     href: "/dashboard",
-    icon: LayoutDashboard
+    icon: LayoutDashboard,
   },
   {
     label: "Scan",
     href: "/scan",
-    icon: ScanBox
-  }
-]
+    icon: ScanBox,
+  },
+];
 
 const Sidebar = () => {
   return (
     <aside className="flex h-screen lg:w-65 shrink-0 flex-col bg-green-700 text-white border-r-2 border-r-black">
       <div className="flex items-center gap-2 px-5 py-5">
-        <img src="/SnapTock-logo.webp" alt="snaptock logo" width={57} height={57} loading="eager" decoding="async"/>
+        <img
+          src="/SnapTock-logo.webp"
+          alt="snaptock logo"
+          width={57}
+          height={57}
+          loading="eager"
+          decoding="async"
+          className="pointer-events-none select-none"
+        />
 
         <div className="text-white leading-tight">
-          <h1 className="font-inter-800 text-[32px]">SnapTock</h1>
-          <p className="text-[14px] font-inter-400">
-            Smart Inventory
-          </p>
+          <h1 className="font-inter-800 text-[32px] select-none">SnapTock</h1>
+          <p className="text-[14px] font-inter-400 select-none">Smart Inventory</p>
         </div>
       </div>
 
