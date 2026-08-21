@@ -30,7 +30,9 @@ const Sidebar = () => {
 
         <div className="text-white leading-tight">
           <h1 className="font-inter-800 text-[32px] select-none">SnapTock</h1>
-          <p className="text-[14px] font-inter-400 select-none">Smart Inventory</p>
+          <p className="text-[14px] font-inter-400 select-none">
+            Smart Inventory
+          </p>
         </div>
       </div>
 

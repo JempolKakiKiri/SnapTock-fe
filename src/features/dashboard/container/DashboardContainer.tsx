@@ -1,7 +1,11 @@
-import DashboardSection from "../components/DashboardSection.tsx";
+import DashboardHeader from "../components/DashboardHeader.tsx";
 
 const DashboardContainer = () => {
-  return <DashboardSection />;
+  return (
+    <>
+      <DashboardHeader />
+    </>
+  );
 };
 
 export default DashboardContainer;
