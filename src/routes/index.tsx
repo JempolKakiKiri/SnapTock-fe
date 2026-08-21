@@ -1,10 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
 import DashboardPage from "../pages/Dashboard/DashboardPage.tsx";
+import Layout from "../shared/components/layout/Layout.tsx";
 
 const router = createBrowserRouter([
   {
-    path: "/dashboard",
-    element: <DashboardPage />,
+    element: <Layout />,
+    children: [
+      {
+        path: "/dashboard",
+        element: <DashboardPage />,
+      },
+    ],
   },
 ]);
 
