@@ -1,111 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "tailwindcss";
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  font-family: "Inter", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+@theme {
+  --color-green-100: #beffdc;
+  --color-green-200: #85f8c4;
+  --color-green-300: #68dba9;
+  --color-green-400: #49bf8f;
+  --color-green-500: #25a475;
+  --color-green-600: #00885f;
+  --color-green-700: #006c4a;
+  --color-green-800: #005137;
+  --color-green-900: #003825;
+  --color-green-1000: #002114;
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+  --color-gray-100: #edf0ff;
+  --color-gray-200: #dce2f7;
+  --color-gray-300: #c0c6db;
+  --color-gray-400: #a4abbf;
+  --color-gray-500: #8a90a4;
+  --color-gray-600: #707789;
+  --color-gray-700: #575e70;
+  --color-gray-800: #404758;
+  --color-gray-900: #293040;
+  --color-gray-1000: #141b2b;
+
+  --color-orange-100: #ffeede;
+  --color-orange-200: #ffddb8;
+  --color-orange-300: #ffb95f;
+  --color-orange-400: #ee9800;
+  --color-orange-500: #ca8100;
+  --color-orange-600: #a76a00;
+  --color-orange-700: #855300;
+  --color-orange-800: #653e00;
+  --color-orange-900: #472a00;
+  --color-orange-1000: #2a1700;
+
+  --color-neutral-100: #ebf1ff;
+  --color-neutral-200: #dce2f3;
+  --color-neutral-300: #c0c7d6;
+  --color-neutral-400: #a4abbb;
+  --color-neutral-500: #8a91a0;
+  --color-neutral-600: #707785;
+  --color-neutral-700: #585f6c;
+  --color-neutral-800: #404754;
+  --color-neutral-900: #2a313d;
+  --color-neutral-1000: #151c27;
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+@utility font-inter-100 {
+  font-family: "Inter", sans-serif;
+  font-weight: 100;
 }
 
-body {
-  margin: 0;
+@utility font-inter-200 {
+  font-family: "Inter", sans-serif;
+  font-weight: 200;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
+@utility font-inter-300 {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+}
+
+@utility font-inter-400 {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+@utility font-inter-500 {
+  font-family: "Inter", sans-serif;
   font-weight: 500;
-  color: var(--text-h);
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
+@utility font-inter-600 {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+@utility font-inter-700 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+}
+
+@utility font-inter-800 {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+}
+
+@utility font-inter-900 {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+}
+
+@layer base {
+  body {
+    @apply bg-neutral-100;
   }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
+  html {
+    @apply font-inter-400 scroll-smooth;
   }
-}
-p {
-  margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
 }
