@@ -8,7 +8,6 @@ const DashboardHeader = () => {
       </span>
 
       <div className="flex items-center gap-4">
-
         <button
           type="button"
           className="text-black transition-colors hover:text-gray-900 cursor-pointer"
