@@ -1,4 +1,10 @@
-import {CalendarDays, CircleAlert, ShoppingBasket, TriangleAlert, Warehouse} from "lucide-react";
+import {
+  CalendarDays,
+  CircleAlert,
+  ShoppingBasket,
+  TriangleAlert,
+  Warehouse,
+} from "lucide-react";
 
 export const summaryData = [
   {
@@ -61,4 +67,4 @@ export const reccomData = [
     stock: "20",
     restock: "130",
   },
-]
+];

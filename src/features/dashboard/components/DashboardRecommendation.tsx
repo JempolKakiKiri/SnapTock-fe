@@ -1,5 +1,5 @@
-import {ArrowRight, type LucideIcon, Truck} from "lucide-react";
-import {reccomData} from "../data/data.ts";
+import { ArrowRight, type LucideIcon, Truck } from "lucide-react";
+import { reccomData } from "../data/data.ts";
 import Card from "../../../shared/components/ui/Card.tsx";
 
 interface ReccomProps {
@@ -27,23 +27,28 @@ const DashboardRecommendation = () => {
             View All <ArrowRight width={24} height={24} />
           </a>
         </div>
-        <div className="border-t-2 rounded-full"/>
+        <div className="border-t-2 rounded-full" />
       </div>
       <div className="grid grid-cols-1 gap-4">
-        {reccomData.map(({id, Icon, bgClassName, colorClassName, title, product, runsout, stock, restock}: ReccomProps)=> (
-            <Card
-              key={id}
-              className="flex flex-col justify-between"
-            >
+        {reccomData.map(
+          ({
+            id,
+            Icon,
+            bgClassName,
+            colorClassName,
+            title,
+            product,
+            runsout,
+            stock,
+            restock,
+          }: ReccomProps) => (
+            <Card key={id} className="flex flex-col justify-between">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div
                     className={`flex h-13 w-13 items-center justify-center rounded-full ${bgClassName}`}
                   >
-                    <Icon
-                      size={36}
-                      className={colorClassName}
-                    />
+                    <Icon size={36} className={colorClassName} />
                   </div>
 
                   <h2 className="font-inter-500 text-[32px] uppercase">
@@ -60,23 +65,17 @@ const DashboardRecommendation = () => {
                 <div className="flex flex-col gap-1 font-inter-500 text-base text-gray-700">
                   <p>
                     Product Name&nbsp; : &nbsp;
-                    <span className="text-gray-900">
-                      {product}
-                    </span>
+                    <span className="text-gray-900">{product}</span>
                   </p>
 
                   <p>
                     Runs Out&nbsp; : &nbsp;
-                    <span className="text-gray-900">
-                      {runsout}
-                    </span>
+                    <span className="text-gray-900">{runsout}</span>
                   </p>
 
                   <p>
                     Recommended Restock:{" "}
-                    <span className="text-gray-900">
-                      {restock} pcs
-                    </span>
+                    <span className="text-gray-900">{restock} pcs</span>
                   </p>
                 </div>
 
@@ -89,7 +88,7 @@ const DashboardRecommendation = () => {
                 </button>
               </div>
             </Card>
-          )
+          ),
         )}
       </div>
     </section>
