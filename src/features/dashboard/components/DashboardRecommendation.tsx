@@ -1,4 +1,4 @@
-import { ArrowRight, type LucideIcon, Truck } from "lucide-react";
+import { type LucideIcon, Truck } from "lucide-react";
 import { reccomData } from "../data/data.ts";
 import Card from "../../../shared/components/ui/Card.tsx";
 
@@ -20,12 +20,6 @@ const DashboardRecommendation = () => {
       <div>
         <div className="flex items-end justify-between">
           <h1 className="font-inter-500 text-[32px]">Action Required</h1>
-          <a
-            href="/"
-            className="flex items-center font-inter-500 text-[20px] cursor-pointer hover:scale-105 transition-transform duration-200"
-          >
-            View All <ArrowRight width={24} height={24} />
-          </a>
         </div>
         <div className="border-t-2 rounded-full" />
       </div>
