@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
 import Webcam from "react-webcam";
-import {useCallback, useRef, useState} from "react";
-import {Camera, ImagePlus} from "lucide-react";
+import { useCallback, useRef, useState } from "react";
+import { Camera, ImagePlus } from "lucide-react";
 
 interface ScanCameraProps {
   onCapture: (image: string) => void;
@@ -17,7 +17,7 @@ const ScanCamera = ({ onCapture }: ScanCameraProps) => {
     const imageSrc = webcamRef.current?.getScreenshot();
 
     if (imageSrc) {
-      onCapture(imageSrc)
+      onCapture(imageSrc);
     }
   }, [onCapture]);
 
@@ -25,7 +25,6 @@ const ScanCamera = ({ onCapture }: ScanCameraProps) => {
     <section className="px-6">
       <div className="mx-auto max-w-5xl">
         <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
-
           <div className="flex items-center justify-between border-b border-gray-200 px-5 py-4">
             <div>
               <h2 className="font-inter-600 text-lg text-gray-900">
@@ -41,7 +40,6 @@ const ScanCamera = ({ onCapture }: ScanCameraProps) => {
           </div>
 
           <div className="relative aspect-[16/9] w-full overflow-hidden bg-gray-950">
-
             {!cameraError ? (
               <Webcam
                 ref={webcamRef}
@@ -62,9 +60,7 @@ const ScanCamera = ({ onCapture }: ScanCameraProps) => {
               <div className="flex h-full flex-col items-center justify-center px-6 text-center text-white">
                 <Camera size={42} className="mb-4 text-gray-400" />
 
-                <h3 className="font-inter-600 text-lg">
-                  Camera unavailable
-                </h3>
+                <h3 className="font-inter-600 text-lg">Camera unavailable</h3>
 
                 <p className="mt-2 max-w-md text-sm text-gray-400">
                   Please allow camera permission or upload the purchase note
@@ -76,7 +72,6 @@ const ScanCamera = ({ onCapture }: ScanCameraProps) => {
             {!cameraError && (
               <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
                 <div className="relative h-[70%] w-[75%] max-w-2xl">
-
                   <span className="absolute left-0 top-0 h-8 w-8 border-l-4 border-t-4 border-green-400" />
 
                   <span className="absolute right-0 top-0 h-8 w-8 border-r-4 border-t-4 border-green-400" />
@@ -98,7 +93,6 @@ const ScanCamera = ({ onCapture }: ScanCameraProps) => {
           </div>
 
           <div className="flex items-center justify-center gap-5 px-5 py-6">
-
             <label
               htmlFor="note-upload"
               className="flex cursor-pointer items-center gap-2 rounded-xl border border-gray-300 px-5 py-3 text-sm font-inter-500 text-gray-700 transition hover:bg-gray-50"

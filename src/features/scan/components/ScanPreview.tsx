@@ -4,18 +4,12 @@ interface ScanPreviewProps {
   onProcess: () => void;
 }
 
-const ScanPreview = ({
-                       image,
-                       onRetake,
-                       onProcess,
-                     }: ScanPreviewProps) => {
+const ScanPreview = ({ image, onRetake, onProcess }: ScanPreviewProps) => {
   return (
     <section className="px-6 pb-8">
       <div className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-gray-200 bg-white">
         <div className="border-b border-gray-200 px-5 py-4">
-          <h2 className="font-inter-600 text-lg">
-            Preview Purchase Note
-          </h2>
+          <h2 className="font-inter-600 text-lg">Preview Purchase Note</h2>
 
           <p className="mt-1 text-sm text-gray-500">
             Make sure the note is clearly visible before processing.

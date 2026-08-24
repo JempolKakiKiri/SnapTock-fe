@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 import ScanHeader from "../components/ScanHeader.tsx";
@@ -9,11 +9,7 @@ import ExtractionResult, {
   type ExtractionItem,
 } from "../components/ScanExtractionResult.tsx";
 
-type ScanState =
-  | "camera"
-  | "preview"
-  | "processing"
-  | "result";
+type ScanState = "camera" | "preview" | "processing" | "result";
 
 const ScanContainer = () => {
   const [state, setState] = useState<ScanState>("camera");
@@ -41,43 +37,31 @@ const ScanContainer = () => {
       const response = await fetch(image);
       const blob = await response.blob();
 
-      const file = new File(
-        [blob],
-        "purchase-note.jpg",
-        {
-          type: "image/jpeg",
-        }
-      );
+      const file = new File([blob], "purchase-note.jpg", {
+        type: "image/jpeg",
+      });
 
       const formData = new FormData();
 
       formData.append("image", file);
 
-      const apiResponse = await fetch(
-        "/api/notes/upload",
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+      const apiResponse = await fetch("/api/notes/upload", {
+        method: "POST",
+        body: formData,
+      });
 
       const result = await apiResponse.json();
 
       if (!apiResponse.ok) {
-        throw new Error(
-          result.message || "Failed to process note"
-        );
+        throw new Error(result.message || "Failed to process note");
       }
 
-      const extractedItems = result.data.map(
-        (item: any) => ({
-          id: item.id,
-          name: item.name,
-          price: item.price,
-          receipt_qty:
-            item.receipt_qty ?? item.qty,
-        })
-      );
+      const extractedItems = result.data.map((item: any) => ({
+        id: item.id,
+        name: item.name,
+        price: item.price,
+        receipt_qty: item.receipt_qty ?? item.qty,
+      }));
 
       setItems(extractedItems);
 
@@ -87,11 +71,7 @@ const ScanContainer = () => {
 
       setState("preview");
 
-      alert(
-        error instanceof Error
-          ? error.message
-          : "Failed to process note"
-      );
+      alert(error instanceof Error ? error.message : "Failed to process note");
     }
   };
 
@@ -111,11 +91,7 @@ const ScanContainer = () => {
 
       {state !== "result" && <ScanTitle />}
 
-      {state === "camera" && (
-        <ScanCamera
-          onCapture={handleCapture}
-        />
-      )}
+      {state === "camera" && <ScanCamera onCapture={handleCapture} />}
 
       {state === "preview" && image && (
         <ScanPreview

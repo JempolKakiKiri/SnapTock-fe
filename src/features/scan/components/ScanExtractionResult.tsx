@@ -30,21 +30,19 @@ const formatRupiah = (value: number) => {
 };
 
 const ExtractionResult = ({
-                            image,
-                            items,
-                            onScanAnother,
-                            onBackDashboard,
-                          }: ExtractionResultProps) => {
+  image,
+  items,
+  onScanAnother,
+  onBackDashboard,
+}: ExtractionResultProps) => {
   const total = items.reduce(
-    (sum, item) =>
-      sum + item.price * item.receipt_qty,
-    0
+    (sum, item) => sum + item.price * item.receipt_qty,
+    0,
   );
 
   return (
     <section className="px-6 pb-8">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-5 lg:grid-cols-[0.9fr_1.5fr]">
-
         <div className="overflow-hidden rounded-xl border border-gray-200 bg-white">
           <div className="flex items-center justify-between border-b border-gray-200 px-5 py-4">
             <h2 className="font-inter-600 text-base text-gray-900">
@@ -69,7 +67,6 @@ const ExtractionResult = ({
         </div>
 
         <div className="flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white">
-
           <div className="flex items-center justify-between border-b border-gray-200 px-5 py-4">
             <div className="flex items-center gap-2">
               <h2 className="font-inter-600 text-base text-gray-900">
@@ -93,66 +90,65 @@ const ExtractionResult = ({
           <div className="overflow-x-auto">
             <table className="w-full border-collapse text-left">
               <thead>
-              <tr className="border-b border-gray-200 bg-gray-50">
-                <th className="px-4 py-3 text-xs font-inter-500 text-gray-500">
-                  Nama Barang
-                </th>
+                <tr className="border-b border-gray-200 bg-gray-50">
+                  <th className="px-4 py-3 text-xs font-inter-500 text-gray-500">
+                    Nama Barang
+                  </th>
 
-                <th className="px-4 py-3 text-xs font-inter-500 text-gray-500">
-                  Harga
-                </th>
+                  <th className="px-4 py-3 text-xs font-inter-500 text-gray-500">
+                    Harga
+                  </th>
 
-                <th className="px-4 py-3 text-xs font-inter-500 text-gray-500">
-                  Qty
-                </th>
+                  <th className="px-4 py-3 text-xs font-inter-500 text-gray-500">
+                    Qty
+                  </th>
 
-                <th className="px-4 py-3 text-xs font-inter-500 text-gray-500">
-                  Subtotal
-                </th>
+                  <th className="px-4 py-3 text-xs font-inter-500 text-gray-500">
+                    Subtotal
+                  </th>
 
-                <th className="px-4 py-3 text-xs font-inter-500 text-gray-500">
-                  Status
-                </th>
-              </tr>
+                  <th className="px-4 py-3 text-xs font-inter-500 text-gray-500">
+                    Status
+                  </th>
+                </tr>
               </thead>
 
               <tbody>
-              {items.map((item, index) => {
-                const subtotal =
-                  item.price * item.receipt_qty;
+                {items.map((item, index) => {
+                  const subtotal = item.price * item.receipt_qty;
 
-                return (
-                  <tr
-                    key={item.id ?? index}
-                    className="border-b border-gray-100 last:border-b-0"
-                  >
-                    <td className="px-4 py-4">
-                      <p className="max-w-[150px] text-sm font-inter-600 text-gray-900">
-                        {item.name}
-                      </p>
-                    </td>
+                  return (
+                    <tr
+                      key={item.id ?? index}
+                      className="border-b border-gray-100 last:border-b-0"
+                    >
+                      <td className="px-4 py-4">
+                        <p className="max-w-[150px] text-sm font-inter-600 text-gray-900">
+                          {item.name}
+                        </p>
+                      </td>
 
-                    <td className="px-4 py-4 text-sm text-gray-600">
-                      {formatRupiah(item.price)}
-                    </td>
+                      <td className="px-4 py-4 text-sm text-gray-600">
+                        {formatRupiah(item.price)}
+                      </td>
 
-                    <td className="px-4 py-4 text-sm text-gray-600">
-                      {item.receipt_qty}
-                    </td>
+                      <td className="px-4 py-4 text-sm text-gray-600">
+                        {item.receipt_qty}
+                      </td>
 
-                    <td className="px-4 py-4 text-sm font-inter-500 text-gray-700">
-                      {formatRupiah(subtotal)}
-                    </td>
+                      <td className="px-4 py-4 text-sm font-inter-500 text-gray-700">
+                        {formatRupiah(subtotal)}
+                      </td>
 
-                    <td className="px-4 py-4">
+                      <td className="px-4 py-4">
                         <span className="inline-flex items-center gap-1 rounded-full bg-green-50 px-2.5 py-1 text-xs font-inter-500 text-green-700">
                           <CheckCircle2 size={13} />
                           Tersimpan
                         </span>
-                    </td>
-                  </tr>
-                );
-              })}
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
@@ -167,9 +163,7 @@ const ExtractionResult = ({
 
           <div className="mt-auto flex items-end justify-between bg-green-50 px-5 py-6">
             <div>
-              <p className="text-sm text-gray-500">
-                Total Terbaca
-              </p>
+              <p className="text-sm text-gray-500">Total Terbaca</p>
             </div>
 
             <p className="text-2xl font-inter-700 text-green-700">

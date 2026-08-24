@@ -1,9 +1,12 @@
-import {ArrowLeft, BellRing, UserRound} from "lucide-react";
+import { ArrowLeft, BellRing, UserRound } from "lucide-react";
 
 const ScanHeader = () => {
   return (
     <header className="flex h-18 items-center justify-between border-b-2 bg-white px-6">
-      <a href="/dashboard" className="text-base font-inter-500 text-black flex items-center gap-2 hover:scale-105 duration-200">
+      <a
+        href="/dashboard"
+        className="text-base font-inter-500 text-black flex items-center gap-2 hover:scale-105 duration-200"
+      >
         <ArrowLeft size={20} />
         Extranction Result
       </a>
