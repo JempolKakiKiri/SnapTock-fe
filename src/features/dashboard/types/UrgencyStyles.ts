@@ -5,7 +5,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-import type { UrgencyLevel} from "../../../repository/inventory/dto.ts";
+import type { UrgencyLevel } from "../../../repository/inventory/dto.ts";
 
 interface UrgencyStyle {
   Icon: LucideIcon;

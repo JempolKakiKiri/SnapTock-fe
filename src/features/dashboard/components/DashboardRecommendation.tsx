@@ -1,9 +1,12 @@
 import { Loader2, PackageCheck, RefreshCw, Truck } from "lucide-react";
 
 import Card from "../../../shared/components/ui/Card.tsx";
-import { useRecommendations} from "../../../repository/inventory/query.ts";
-import { useRefreshRecommendations} from "../../../repository/inventory/action.ts";
-import { getRunoutLabel, getUrgencyLevel} from "../../../repository/inventory/dto.ts";
+import { useRecommendations } from "../../../repository/inventory/query.ts";
+import { useRefreshRecommendations } from "../../../repository/inventory/action.ts";
+import {
+  getRunoutLabel,
+  getUrgencyLevel,
+} from "../../../repository/inventory/dto.ts";
 import { urgencyStyle } from "../types/UrgencyStyles.ts";
 
 const DashboardRecommendation = () => {
