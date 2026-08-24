@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { api, toApiError } from "../../lib/axios";
-import type { ApiResponse} from "../../shared/repository/dto.ts";
+import type { ApiResponse } from "../../shared/repository/dto.ts";
 import {
   normalizeRecommendation,
   sortByUrgency,
-  type RecommendationDto
+  type RecommendationDto,
 } from "./dto.ts";
 
 export const dashboardKeys = {

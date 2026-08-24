@@ -1,4 +1,4 @@
-import { toNumber} from "../../shared/repository/dto.ts";
+import { toNumber } from "../../shared/repository/dto.ts";
 
 export interface RecommendationDto {
   product_id: number;

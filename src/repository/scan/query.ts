@@ -1,6 +1,6 @@
 import { useQueryClient } from "@tanstack/react-query";
 
-import type { ScannedProductDto} from "./dto.ts";
+import type { ScannedProductDto } from "./dto.ts";
 
 export const scanKeys = {
   all: ["scan"] as const,

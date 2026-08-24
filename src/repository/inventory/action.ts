@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-import { dashboardKeys, getRecommendations} from "./query.ts";
+import { dashboardKeys, getRecommendations } from "./query.ts";
 
 export const useRefreshRecommendations = () => {
   const queryClient = useQueryClient();

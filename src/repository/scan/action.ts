@@ -1,13 +1,13 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { api, toApiError } from "../../lib/axios";
-import type { ApiResponse} from "../../shared/repository/dto.ts";
-import { dashboardKeys} from "../inventory/query.ts";
-import { scanKeys} from "./query.ts";
+import type { ApiResponse } from "../../shared/repository/dto.ts";
+import { dashboardKeys } from "../inventory/query.ts";
+import { scanKeys } from "./query.ts";
 import {
   normalizeScannedProduct,
   type ScanNotePayload,
-  type ScannedProductDto
+  type ScannedProductDto,
 } from "./dto.ts";
 
 export const scanNote = async ({ image }: ScanNotePayload) => {

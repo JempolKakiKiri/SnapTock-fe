@@ -1,4 +1,4 @@
-import { toNumber, type ProductDto} from "../../shared/repository/dto.ts";
+import { toNumber, type ProductDto } from "../../shared/repository/dto.ts";
 
 export interface ScannedProductDto extends ProductDto {
   receipt_qty: number;
