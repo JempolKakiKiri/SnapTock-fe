@@ -1,9 +1,7 @@
-const ScanPage = () => {
-  return (
-    <div>
+import ScanContainer from "../../features/scan/container/ScanContainer.tsx";
 
-    </div>
-  );
+const ScanPage = () => {
+  return <ScanContainer />
 };
 
 export default ScanPage;

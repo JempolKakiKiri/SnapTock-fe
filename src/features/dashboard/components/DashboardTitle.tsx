@@ -6,7 +6,7 @@ const DashboardTitle = () => {
 
   const handleScan = () => {
     navigate("/scan");
-  }
+  };
 
   return (
     <div className="flex flex-col p-6">
@@ -15,7 +15,10 @@ const DashboardTitle = () => {
         <p className="text-base font-inter-400">
           Monitor Your Stock and Restock What You Need
         </p>
-        <button onClick={handleScan} className="flex items-center gap-3 text-white bg-green-500 px-3 py-2 rounded-xl cursor-pointer hover:scale-105 transition-transform duration-300">
+        <button
+          onClick={handleScan}
+          className="flex items-center gap-3 text-white bg-green-500 px-3 py-2 rounded-xl cursor-pointer hover:scale-105 transition-transform duration-300"
+        >
           <ScanBox width={20} height={20} />
           <p className="text-base font-inter-400">Scan New Note</p>
         </button>
