@@ -8,15 +8,16 @@ import ScanPreview from "../components/ScanPreview.tsx";
 import ExtractionResult, {
   type ExtractionItem,
 } from "../components/ScanExtractionResult.tsx";
+import { useScanNote} from "../../../repository/scan/action.ts";
 
 type ScanState = "camera" | "preview" | "processing" | "result";
 
 const ScanContainer = () => {
   const [state, setState] = useState<ScanState>("camera");
-
   const [image, setImage] = useState<string | null>(null);
-
   const [items, setItems] = useState<ExtractionItem[]>([]);
+
+  const scanMutation = useScanNote();
 
   const handleCapture = (imageSrc: string) => {
     setImage(imageSrc);
@@ -38,40 +39,25 @@ const ScanContainer = () => {
       const blob = await response.blob();
 
       const file = new File([blob], "purchase-note.jpg", {
-        type: "image/jpeg",
+        type: blob.type || "image/jpeg",
       });
 
-      const formData = new FormData();
-
-      formData.append("image", file);
-
-      const apiResponse = await fetch("/api/notes/upload", {
-        method: "POST",
-        body: formData,
+      const extractedItems = await scanMutation.mutateAsync({
+        image: file,
       });
-
-      const result = await apiResponse.json();
-
-      if (!apiResponse.ok) {
-        throw new Error(result.message || "Failed to process note");
-      }
-
-      const extractedItems = result.data.map((item: any) => ({
-        id: item.id,
-        name: item.name,
-        price: item.price,
-        receipt_qty: item.receipt_qty ?? item.qty,
-      }));
 
       setItems(extractedItems);
-
       setState("result");
     } catch (error) {
       console.error("Scan error:", error);
 
       setState("preview");
 
-      alert(error instanceof Error ? error.message : "Failed to process note");
+      alert(
+        error instanceof Error
+          ? error.message
+          : "Failed to process note",
+      );
     }
   };
 
@@ -91,7 +77,9 @@ const ScanContainer = () => {
 
       {state !== "result" && <ScanTitle />}
 
-      {state === "camera" && <ScanCamera onCapture={handleCapture} />}
+      {state === "camera" && (
+        <ScanCamera onCapture={handleCapture} />
+      )}
 
       {state === "preview" && image && (
         <ScanPreview
