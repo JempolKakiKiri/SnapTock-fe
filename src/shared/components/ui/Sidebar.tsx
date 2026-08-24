@@ -19,7 +19,7 @@ const Sidebar = () => {
     <aside className="flex lg:w-65 shrink-0 flex-col bg-green-700 text-white border-r-2 border-r-black">
       <div className="flex items-center gap-2 px-5 py-5">
         <img
-          src="/SnapTock-logo.webp"
+          src="/src/assets/SnapTock-logo.webp"
           alt="snaptock logo"
           width={57}
           height={57}
