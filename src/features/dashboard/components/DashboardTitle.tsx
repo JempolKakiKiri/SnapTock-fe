@@ -1,4 +1,4 @@
-import { ScanLine} from "lucide-react";
+import { ScanLine } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const DashboardTitle = () => {
