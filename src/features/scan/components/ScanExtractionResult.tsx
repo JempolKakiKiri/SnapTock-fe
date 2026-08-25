@@ -1,8 +1,4 @@
-import {
-  CheckCircle2,
-  ArrowRight,
-  ScanLine,
-} from "lucide-react";
+import { CheckCircle2, ArrowRight, ScanLine } from "lucide-react";
 
 export interface ExtractionItem {
   id?: number;
@@ -113,61 +109,61 @@ const ExtractionResult = ({
           <div className="hidden overflow-x-auto lg:block">
             <table className="w-full border-collapse text-left">
               <thead>
-              <tr className="border-b border-gray-200 bg-gray-50">
-                <th className="px-4 py-3 font-inter-500 text-xs text-gray-500">
-                  Item Name
-                </th>
-                <th className="px-4 py-3 font-inter-500 text-xs text-gray-500">
-                  Price
-                </th>
-                <th className="px-4 py-3 font-inter-500 text-xs text-gray-500">
-                  Qty
-                </th>
-                <th className="px-4 py-3 font-inter-500 text-xs text-gray-500">
-                  Subtotal
-                </th>
-                <th className="px-4 py-3 font-inter-500 text-xs text-gray-500">
-                  Status
-                </th>
-              </tr>
+                <tr className="border-b border-gray-200 bg-gray-50">
+                  <th className="px-4 py-3 font-inter-500 text-xs text-gray-500">
+                    Item Name
+                  </th>
+                  <th className="px-4 py-3 font-inter-500 text-xs text-gray-500">
+                    Price
+                  </th>
+                  <th className="px-4 py-3 font-inter-500 text-xs text-gray-500">
+                    Qty
+                  </th>
+                  <th className="px-4 py-3 font-inter-500 text-xs text-gray-500">
+                    Subtotal
+                  </th>
+                  <th className="px-4 py-3 font-inter-500 text-xs text-gray-500">
+                    Status
+                  </th>
+                </tr>
               </thead>
 
               <tbody>
-              {items.map((item, index) => {
-                const subtotal = item.price * item.receipt_qty;
+                {items.map((item, index) => {
+                  const subtotal = item.price * item.receipt_qty;
 
-                return (
-                  <tr
-                    key={item.id ?? index}
-                    className="border-b border-gray-100 last:border-b-0"
-                  >
-                    <td className="px-4 py-4">
-                      <p className="max-w-37.5 font-inter-600 text-sm text-gray-900">
-                        {item.name}
-                      </p>
-                    </td>
+                  return (
+                    <tr
+                      key={item.id ?? index}
+                      className="border-b border-gray-100 last:border-b-0"
+                    >
+                      <td className="px-4 py-4">
+                        <p className="max-w-37.5 font-inter-600 text-sm text-gray-900">
+                          {item.name}
+                        </p>
+                      </td>
 
-                    <td className="whitespace-nowrap px-4 py-4 text-sm text-gray-600">
-                      {formatRupiah(item.price)}
-                    </td>
+                      <td className="whitespace-nowrap px-4 py-4 text-sm text-gray-600">
+                        {formatRupiah(item.price)}
+                      </td>
 
-                    <td className="px-4 py-4 text-sm text-gray-600">
-                      {item.receipt_qty}
-                    </td>
+                      <td className="px-4 py-4 text-sm text-gray-600">
+                        {item.receipt_qty}
+                      </td>
 
-                    <td className="whitespace-nowrap px-4 py-4 font-inter-500 text-sm text-gray-700">
-                      {formatRupiah(subtotal)}
-                    </td>
+                      <td className="whitespace-nowrap px-4 py-4 font-inter-500 text-sm text-gray-700">
+                        {formatRupiah(subtotal)}
+                      </td>
 
-                    <td className="px-4 py-4">
+                      <td className="px-4 py-4">
                         <span className="inline-flex items-center gap-1 whitespace-nowrap rounded-full bg-green-50 px-2.5 py-1 font-inter-500 text-xs text-green-700">
                           <CheckCircle2 size={13} />
                           Saved
                         </span>
-                    </td>
-                  </tr>
-                );
-              })}
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
