@@ -1,4 +1,4 @@
-import { Loader2, PackageCheck, RefreshCw, Truck } from "lucide-react";
+import { Loader2, PackageCheck, RefreshCw } from "lucide-react";
 
 import Card from "../../../shared/components/ui/Card.tsx";
 import { useRecommendations } from "../../../repository/inventory/query.ts";
@@ -126,14 +126,6 @@ const DashboardRecommendation = () => {
                     </span>
                   </p>
                 </div>
-
-                <button
-                  type="button"
-                  className="flex w-full shrink-0 cursor-pointer items-center justify-center gap-2 rounded-lg bg-green-500 px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-green-700 sm:w-auto"
-                >
-                  <Truck size={18} />
-                  Restock
-                </button>
               </div>
             </Card>
           );
